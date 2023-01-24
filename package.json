@@ -12,20 +12,20 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "@types/express": "^4.17.15",
+    "@types/node": "^18.11.18",
     "dotenv": "^16.0.3",
     "express": "^4.18.2",
+    "typescript": "^4.9.4",
     "vue": "^3.2.45",
     "vue3-avataaars": "^1.0.12"
   },
   "devDependencies": {
-    "@types/express": "^4.17.15",
-    "@types/node": "^18.11.18",
     "@typescript-eslint/eslint-plugin": "^5.49.0",
     "@typescript-eslint/parser": "^5.49.0",
     "eslint": "^8.32.0",
     "eslint-config-airbnb-base": "^15.0.0",
     "eslint-config-airbnb-typescript": "^17.0.0",
-    "ts-node": "^10.9.1",
-    "typescript": "^4.9.4"
+    "ts-node": "^10.9.1"
   }
 }

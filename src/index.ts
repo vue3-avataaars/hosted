@@ -54,7 +54,7 @@ const enforceReferer = (req: Request, res: Response, next: NextFunction) => {
 
 const app = express();
 app.get('/', (req, res) => {
-  res.sendFile(resolve(__dirname, 'index.html'));
+  res.sendFile(resolve(__dirname, '../public/index.html'));
 });
 
 app.get('/svg', enforceReferer, async (req, res) => {
