@@ -7,7 +7,7 @@ import express, { NextFunction, Request, Response } from 'express';
 import { resolve } from 'path';
 import { renderToString } from 'vue/server-renderer';
 import {
-  Avatar, CleanProps, Factory, Options, IOptionalAvatarProps,
+  Avatar, CleanProps, Factory, Options, IOptionalAvatarProps, FactoryUrl,
 } from 'vue3-avataaars';
 
 type Hex = `#${string}`;
@@ -88,9 +88,7 @@ app.get('/svg', enforceReferer, async (req, res) => {
 });
 
 app.get('/random-svg', enforceReferer, async (req, res) => {
-  const props = CleanProps(Factory());
-  const query = new URLSearchParams(props as {}).toString().replaceAll('%23', '');
-  return res.redirect(`https://vue3-avataaars.com/svg?${query}`);
+  res.redirect(FactoryUrl(CleanProps(Factory()), process.env.SELF_DOMAIN));
 });
 
 app.listen(process.env.LISTEN_PORT, () => {
