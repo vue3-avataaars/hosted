@@ -18,7 +18,7 @@
     "express": "^4.18.2",
     "typescript": "^4.9.4",
     "vue": "^3.2.45",
-    "vue3-avataaars": "^1.0.12"
+    "vue3-avataaars": "^1.0.14"
   },
   "devDependencies": {
     "@typescript-eslint/eslint-plugin": "^5.49.0",
