@@ -83,6 +83,11 @@ app.get('/svg', enforceReferer, async (req, res) => {
   const avatar = Avatar(Factory(CleanProps(props)));
   const str = await renderToString(avatar);
 
+  // If the URL came with a hash, it can be cached for a long time!
+  if (query?.hash) {
+    res.set('Cache-Control', 'public, max-age=31536000, immutable');
+  }
+
   res.set('Content-Type', 'image/svg+xml');
   res.send(str);
 });
